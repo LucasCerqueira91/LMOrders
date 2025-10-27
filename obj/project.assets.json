@@ -2252,11 +2252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
+      "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
       "projectName": "LM.Orders.Api",
-      "projectPath": "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
+      "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
       "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
-      "outputPath": "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Api\\obj\\",
+      "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2277,11 +2277,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
-              "projectPath": "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Application\\LM.Orders.Application.csproj"
+            "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
+              "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj"
             },
-            "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
-              "projectPath": "C:\\LMOrders\\LMOrders-development\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
+            "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+              "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
             }
           }
         }

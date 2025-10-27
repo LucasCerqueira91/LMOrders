@@ -13,18 +13,127 @@ Microserviço desenvolvido para gerenciar pedidos da LM Mobilidade, implementand
 - **Mediator Pattern**: Desacoplamento através do MediatR
 - **SOLID Principles**: Código limpo e manutenível
 
-### Estrutura do Projeto
-```
-src/
-├── LM.Orders.Api/              # API REST (Minimal APIs)
-├── LM.Orders.Application/       # Casos de uso e regras de negócio
-├── LM.Orders.Domain/           # Entidades e regras de domínio
-└── LM.Orders.Infrastructure/   # Implementações de infraestrutura
-    ├── Sql/                    # SQL Server (dados principais)
-    ├── Mongo/                  # MongoDB (itens do pedido)
-    ├── Cache/                  # Redis (cache)
-    └── Messaging/              # RabbitMQ (eventos)
-```
+@startuml LMOrders-Modules
+title LMOrders – Módulos e Dependências
+
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam ArrowColor #888
+
+package "LMOrders" {
+  [LM.Orders.Api] as Api
+  [LM.Orders.Application] as App
+  [LM.Orders.Domain] as Domain
+  [LM.Orders.Infrastructure] as Infra
+  [LM.Orders.Tests] as Tests
+
+  Api -down-> App : Controllers / DI / Swagger
+  App -down-> Domain : Commands/Queries usam Entidades/VOs
+  App -right-> Infra : Implementações (Repo/EF/Bus)
+  Infra -up-> Domain : Repo/EF referenciam o domínio
+
+  Tests ..> Api : API/Integration Tests
+  Tests ..> App : Application/Unit Tests
+  Tests ..> Domain : Domain/Unit Tests
+}
+
+rectangle "Domain" as D {
+  [Entity<TId>]
+  [Order]
+  [OrderItem]
+  [ValueObjects\nOrderId(Guid), ProductId, Money]
+  [Events\nOrderCreated, OrderItemAdded]
+}
+
+rectangle "Application" as A {
+  [Commands\nCreateOrder, AddItemToOrder, CheckoutOrder]
+  [Queries\nGetOrderById, ListOrders]
+  [Handlers\nCreateOrderHandler, AddItemHandler]
+  [DTOs/Mappings]
+  [Behaviors\nValidation, Logging, Transaction]
+}
+
+rectangle "Infrastructure" as I {
+  [EF Core Context]
+  [Repositories]
+  [Migrations]
+  [Outbox/Bus (opcional)]
+  [Adapters externos]
+}
+
+Api -[hidden]-> D
+A -[hidden]-> I
+@enduml
+
+
+@startuml LMOrders-Folders
+title LMOrders – Mapa de Pastas (alto nível)
+
+' Requer PlantUML >= v1.2020 para MindMap/WBS
+@startmindmap
+* LMOrders
+** src
+*** LM.Orders.Api
+**** Controllers
+**** Config (DI/Swagger/Health)
+**** Filters/Middlewares
+*** LM.Orders.Application
+**** Commands
+***** CreateOrder
+***** AddItemToOrder
+**** Queries
+***** GetOrderById
+***** ListOrders
+**** Handlers
+**** DTOs
+**** Behaviors (Validation/Logging)
+*** LM.Orders.Domain
+**** Entities
+***** Order
+***** OrderItem
+**** ValueObjects
+***** OrderId (Guid)
+***** ProductId
+***** Money
+**** Events
+*** LM.Orders.Infrastructure
+**** Persistence
+***** DbContext (EF)
+***** Migrations
+**** Repositories
+**** Outbox/Bus (opcional)
+** tests
+*** LM.Orders.Tests
+**** Domain
+**** Application
+**** Api/Integration
+@endmindmap
+@enduml
+
+
+@startuml LMOrders-CQRS-CreateOrder
+title Fluxo CQRS – CreateOrder
+
+actor Client
+participant "API\n(OrdersController)" as API
+participant "Application\n(CreateOrderHandler)" as APP
+participant "Domain\n(Order, VOs)" as DOM
+database "Infra\n(EF Core / Repo)" as DB
+participant "Bus/Outbox\n(opcional)" as BUS
+
+Client -> API : POST /orders { customerId, items[] }
+API -> APP : Send(CreateOrderCommand)
+APP -> DOM : new Order(OrderId, items…)\nvalida regras (invariantes)
+DOM --> APP : Order + DomainEvent(OrderCreated)
+APP -> DB : UnitOfWork.Begin()\nRepository.Add(Order)
+DB --> APP : OK
+APP -> BUS : Outbox.Append(OrderCreated) (opcional)
+APP -> DB : UnitOfWork.Commit()
+APP --> API : OrderId
+API --> Client : 201 Created { orderId }
+
+@enduml
+
 
 ## 🚀 Funcionalidades
 
@@ -203,22 +312,6 @@ dotnet test --collect:"XPlat Code Coverage"
 - ✅ Cálculo de totais
 - ✅ Mudança de status
 
-## 📈 Próximos Passos
-
-- [ ] Implementar logs estruturados (Serilog)
-- [ ] Adicionar métricas (Prometheus)
-- [ ] Implementar health checks
-- [ ] Adicionar autenticação/autorização
-- [ ] Implementar retry policies
-- [ ] Adicionar testes de integração
-
-## 👥 Contribuição
-
-1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
 
 ## 📄 Licença
 
