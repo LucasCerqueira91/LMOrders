@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\LM.Orders.Api",
+    "\\src\\LM.Orders.Application",
+    "\\src\\LM.Orders.Domain",
+    "\\tests"
+  ],
+  "PreviewInSolutionExplorer": false
+}
