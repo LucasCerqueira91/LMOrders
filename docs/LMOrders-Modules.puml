@@ -1,0 +1,51 @@
+@startuml LMOrders-Modules
+title LMOrders – Módulos e Dependências
+
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam ArrowColor #888
+
+package "LMOrders" {
+  [LM.Orders.Api] as Api
+  [LM.Orders.Application] as App
+  [LM.Orders.Domain] as Domain
+  [LM.Orders.Infrastructure] as Infra
+  [LM.Orders.Tests] as Tests
+
+  Api -down-> App : Controllers / DI / Swagger
+  App -down-> Domain : Commands/Queries usam Entidades/VOs
+  App -right-> Infra : Implementações (Repo/EF/Bus)
+  Infra -up-> Domain : Repo/EF referenciam o domínio
+
+  Tests ..> Api : API/Integration Tests
+  Tests ..> App : Application/Unit Tests
+  Tests ..> Domain : Domain/Unit Tests
+}
+
+rectangle "Domain" as D {
+  [Entity<TId>]
+  [Order]
+  [OrderItem]
+  [ValueObjects\nOrderId(Guid), ProductId, Money]
+  [Events\nOrderCreated, OrderItemAdded]
+}
+
+rectangle "Application" as A {
+  [Commands\nCreateOrder, AddItemToOrder, CheckoutOrder]
+  [Queries\nGetOrderById, ListOrders]
+  [Handlers\nCreateOrderHandler, AddItemHandler]
+  [DTOs/Mappings]
+  [Behaviors\nValidation, Logging, Transaction]
+}
+
+rectangle "Infrastructure" as I {
+  [EF Core Context]
+  [Repositories]
+  [Migrations]
+  [Outbox/Bus (opcional)]
+  [Adapters externos]
+}
+
+Api -[hidden]-> D
+A -[hidden]-> I
+@enduml

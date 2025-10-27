@@ -1,0 +1,22 @@
+@startuml LMOrders-CQRS-CreateOrder
+title Fluxo CQRS – CreateOrder
+
+actor Client
+participant "API\n(OrdersController)" as API
+participant "Application\n(CreateOrderHandler)" as APP
+participant "Domain\n(Order, VOs)" as DOM
+database "Infra\n(EF Core / Repo)" as DB
+participant "Bus/Outbox\n(opcional)" as BUS
+
+Client -> API : POST /orders { customerId, items[] }
+API -> APP : Send(CreateOrderCommand)
+APP -> DOM : new Order(OrderId, items…)\nvalida regras (invariantes)
+DOM --> APP : Order + DomainEvent(OrderCreated)
+APP -> DB : UnitOfWork.Begin()\nRepository.Add(Order)
+DB --> APP : OK
+APP -> BUS : Outbox.Append(OrderCreated) (opcional)
+APP -> DB : UnitOfWork.Commit()
+APP --> API : OrderId
+API --> Client : 201 Created { orderId }
+
+@enduml

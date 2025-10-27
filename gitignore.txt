@@ -1,0 +1,11 @@
+@'
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.log
+*.nupkg
+*.snupkg
+packages/
+'@ | Out-File -Encoding utf8 .gitignore

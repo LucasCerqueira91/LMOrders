@@ -1,0 +1,22 @@
+@base = https://localhost:7264
+
+### Criar um novo pedido
+POST {{base}}/orders
+Content-Type: application/json
+
+{
+  "id": "{{$guid}}",
+  "customerId": "CLI-999",
+  "createdAt": "{{$datetime iso8601}}",
+  "status": "Created",
+  "items": [
+    { "product": "Camiseta Preta", "quantity": 2, "unitPrice": 79.9 },
+    { "product": "Tênis Nike", "quantity": 1, "unitPrice": 499.0 }
+  ]
+}
+
+### Buscar pedido pelo ID
+# Cole aqui o id retornado no POST acima
+@id = 00000000-0000-0000-0000-000000000000
+GET {{base}}/orders/{{id}}
+Accept: application/json

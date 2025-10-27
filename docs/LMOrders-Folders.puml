@@ -1,0 +1,43 @@
+@startuml LMOrders-Folders
+title LMOrders – Mapa de Pastas (alto nível)
+
+' Requer PlantUML >= v1.2020 para MindMap/WBS
+@startmindmap
+* LMOrders
+** src
+*** LM.Orders.Api
+**** Controllers
+**** Config (DI/Swagger/Health)
+**** Filters/Middlewares
+*** LM.Orders.Application
+**** Commands
+***** CreateOrder
+***** AddItemToOrder
+**** Queries
+***** GetOrderById
+***** ListOrders
+**** Handlers
+**** DTOs
+**** Behaviors (Validation/Logging)
+*** LM.Orders.Domain
+**** Entities
+***** Order
+***** OrderItem
+**** ValueObjects
+***** OrderId (Guid)
+***** ProductId
+***** Money
+**** Events
+*** LM.Orders.Infrastructure
+**** Persistence
+***** DbContext (EF)
+***** Migrations
+**** Repositories
+**** Outbox/Bus (opcional)
+** tests
+*** LM.Orders.Tests
+**** Domain
+**** Application
+**** Api/Integration
+@endmindmap
+@enduml
