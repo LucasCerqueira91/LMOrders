@@ -27,7 +27,6 @@ public sealed class RabbitEventBus : IEventBus, IDisposable
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
 
-        // Declara exchange e fila
         _channel.ExchangeDeclare(_exchange, ExchangeType.Direct, durable: true);
         _channel.QueueDeclare(_queueName, durable: true, exclusive: false, autoDelete: false);
         _channel.QueueBind(_queueName, _exchange, routingKey: "order.created");
@@ -55,7 +54,6 @@ public sealed class RabbitEventBus : IEventBus, IDisposable
         }
         catch (Exception ex)
         {
-            // Fallback: log do evento em caso de falha
             Console.WriteLine($"Warning: Failed to publish event to RabbitMQ: {ex.Message}");
             Console.WriteLine($"Event: {JsonSerializer.Serialize(@event)}");
             return Task.CompletedTask;
