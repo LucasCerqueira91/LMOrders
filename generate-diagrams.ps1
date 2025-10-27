@@ -19,16 +19,19 @@ function Generate-Image {
     $bytes = $encoder.GetBytes($content)
     
     # Comprimir usando Deflate (necessário para PlantUML)
-    $deflateStream = New-Object System.IO.MemoryStream
-    $gzipStream = New-Object System.IO.Compression.DeflateStream($deflateStream, [System.IO.Compression.CompressionMode]::Compress)
-    $gzipStream.Write($bytes, 0, $bytes.Length)
-    $gzipStream.Close()
+    $memoryStream = New-Object System.IO.MemoryStream
+    $deflateStream = New-Object System.IO.Compression.DeflateStream($memoryStream, [System.IO.Compression.CompressionMode]::Compress)
+    $deflateStream.Write($bytes, 0, $bytes.Length)
+    $deflateStream.Close()
     
-    $compressedBytes = $deflateStream.ToArray()
+    $compressedBytes = $memoryStream.ToArray()
     
     # Converter para Base64 usando a codificação do PlantUML
     $base64 = [Convert]::ToBase64String($compressedBytes)
     $urlSafeBase64 = $base64 -replace '\+', '-' -replace '/', '_' -replace '=', ''
+    
+    # Adicionar o prefixo ~1 conforme sugerido na mensagem de erro do PlantUML
+    $urlSafeBase64 = "~1" + $urlSafeBase64
     
     # Construir URL
     $url = "$plantumlServer/$urlSafeBase64"
