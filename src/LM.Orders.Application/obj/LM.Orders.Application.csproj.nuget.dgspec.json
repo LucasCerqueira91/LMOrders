@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {}
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {}
   },
   "projects": {
-    "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
+        "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
         "projectName": "LM.Orders.Application",
-        "projectPath": "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\LMOrders\\src\\LM.Orders.Application\\obj\\",
+        "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
+        "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas.cerqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
-                "projectPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
               }
             }
           }
@@ -107,20 +107,20 @@
         }
       }
     },
-    "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
+        "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
         "projectName": "LM.Orders.Domain",
-        "projectPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\obj\\",
+        "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
+        "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas.cerqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

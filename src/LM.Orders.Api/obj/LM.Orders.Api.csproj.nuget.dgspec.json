@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj": {}
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj": {}
   },
   "projects": {
-    "C:\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj": {
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
+        "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
         "projectName": "LM.Orders.Api",
-        "projectPath": "C:\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\LMOrders\\src\\LM.Orders.Api\\obj\\",
+        "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\LM.Orders.Api.csproj",
+        "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas.cerqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
-                "projectPath": "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj"
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj"
               },
-              "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
-                "projectPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
+              },
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure.csproj"
               }
             }
           }
@@ -61,6 +64,10 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[13.1.0, )"
@@ -70,6 +77,10 @@
               "version": "[8.0.21, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.10, )"
             },
@@ -121,20 +132,20 @@
         }
       }
     },
-    "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
+        "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
         "projectName": "LM.Orders.Application",
-        "projectPath": "C:\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\LMOrders\\src\\LM.Orders.Application\\obj\\",
+        "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj",
+        "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas.cerqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -149,8 +160,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
-                "projectPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
               }
             }
           }
@@ -224,20 +235,20 @@
         }
       }
     },
-    "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
+        "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
         "projectName": "LM.Orders.Domain",
-        "projectPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\LMOrders\\src\\LM.Orders.Domain\\obj\\",
+        "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj",
+        "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas.cerqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -301,6 +312,100 @@
             "xunit": {
               "target": "Package",
               "version": "[2.9.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure.csproj",
+        "projectName": "LM.Orders.Infrastructure",
+        "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\lucas.cerqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Infrastructure\\LM.Orders.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lucas.cerqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Application\\LM.Orders.Application.csproj"
+              },
+              "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj": {
+                "projectPath": "C:\\LMOrders\\LMOrders\\src\\LM.Orders.Domain\\LM.Orders.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.32, )"
             }
           },
           "imports": [

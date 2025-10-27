@@ -66,12 +66,13 @@ public class OrderTests
     public void Order_MarkPaid_ShouldChangeStatus()
     {
         // Arrange
+        var orderId = Guid.NewGuid();
         var order = new Order(
-            Guid.NewGuid(),
+            orderId,
             "customer123",
             DateTime.UtcNow,
             OrderStatus.Created,
-            new List<OrderItem> { new(Guid.NewGuid(), "Product", 1, 10m) }
+            new List<OrderItem> { new(orderId, "Product", 1, 10m) }
         );
 
         // Act
